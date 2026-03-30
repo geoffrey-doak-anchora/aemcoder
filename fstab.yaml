@@ -1,5 +1,2 @@
 mountpoints:
-  /:
-    url: "https://raw.githubusercontent.com/geoffrey-doak-anchora/aemcoder/main/content"
-    type: "markup"
-    suffix: ".html"
+  /: https://content.da.live/geoffrey-doak-anchora/aemcoder
