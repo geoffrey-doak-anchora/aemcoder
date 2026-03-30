@@ -1,0 +1,72 @@
+/* Cards Stats - Proof points / statistics cards
+ * Grid of stat cards with icons, titles, descriptions
+ */
+
+.cards-stats > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (width >= 900px) {
+  .cards-stats > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cards-stats > ul > li {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  padding: 16px;
+}
+
+.cards-stats .cards-stats-card-image {
+  line-height: 0;
+  margin-bottom: 12px;
+}
+
+.cards-stats > ul > li img {
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.cards-stats .cards-stats-card-body {
+  margin: 0;
+}
+
+.cards-stats .cards-stats-card-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--latrobe-red);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+
+.cards-stats .cards-stats-card-body p {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: var(--latrobe-charcoal);
+}
+
+.cards-stats .cards-stats-card-body a {
+  font-size: var(--body-font-size-s);
+  color: var(--latrobe-red);
+  text-decoration: underline;
+}
+
+.cards-stats .cards-stats-card-body a::after {
+  display: none;
+}
+
+.cards-stats .cards-stats-card-body a:hover {
+  text-decoration: underline;
+}

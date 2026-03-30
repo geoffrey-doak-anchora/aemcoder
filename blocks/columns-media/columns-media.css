@@ -1,0 +1,141 @@
+/* Columns Media - Events and News two-column layout
+ * Each column has a heading, media items with images beside text
+ */
+
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (width >= 900px) {
+  .columns-media > div {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .columns-media > div > div {
+    flex: 1;
+  }
+}
+
+.columns-media > div > div {
+  order: unset;
+}
+
+.columns-media h2 {
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: var(--heading-font-size-xl);
+  text-align: left;
+}
+
+.columns-media h4 {
+  margin-top: 0;
+  margin-bottom: 4px;
+  text-transform: none;
+  font-size: var(--heading-font-size-m);
+}
+
+.columns-media h4 a {
+  color: var(--latrobe-charcoal);
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.columns-media h4 a:hover {
+  color: var(--latrobe-red);
+  text-decoration: none;
+}
+
+/* Each event/news item: image paragraph followed by h4 and description
+ * Create a grid so image sits to the left of the text content */
+.columns-media > div > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Image paragraphs - thumbnail to the left */
+.columns-media > div > div > p:has(img) {
+  float: left;
+  width: 160px;
+  margin: 0 16px 8px 0;
+}
+
+@media (width < 600px) {
+  .columns-media > div > div > p:has(img) {
+    width: 100px;
+    margin: 0 12px 8px 0;
+  }
+}
+
+.columns-media > div > div > p:has(img) + h4 {
+  clear: none;
+}
+
+/* Clear float before each new image (new item) */
+.columns-media > div > div > p:has(img) ~ p:has(img) {
+  clear: left;
+}
+
+/* Clear float before headings that follow text paragraphs */
+.columns-media > div > div > p + p + p:has(img) {
+  clear: left;
+}
+
+.columns-media img {
+  width: 160px;
+  height: 106px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (width < 600px) {
+  .columns-media img {
+    width: 100px;
+    height: 66px;
+  }
+}
+
+.columns-media p {
+  margin: 0 0 4px;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.columns-media p strong {
+  font-weight: 500;
+}
+
+/* "More events" / "More news" CTA links */
+.columns-media .button-wrapper {
+  margin-top: 16px;
+  clear: both;
+}
+
+.columns-media a.button {
+  border-color: var(--latrobe-red);
+  background-color: transparent;
+  color: var(--latrobe-red);
+  font-size: var(--body-font-size-xs);
+  padding: 8px 20px;
+}
+
+.columns-media a.button:hover {
+  border-color: var(--latrobe-red);
+  background-color: var(--latrobe-red);
+  color: var(--latrobe-white);
+}
+
+/* h2 heading spans full width */
+.columns-media > div > div > h2 {
+  clear: both;
+}

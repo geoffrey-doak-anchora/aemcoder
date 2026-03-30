@@ -1,0 +1,38 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-29T23:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.latrobe.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "landing pages with rotating banners",
+      "campaign pages with multiple messages"
+    ],
+    "notSuitableFor": [
+      "simple single-image heroes",
+      "text-only page headers"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-29T23:35:00.000Z"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "doc",
+  "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+  "github": {
+    "org": "geoffrey-doak-anchora",
+    "site": "aemcoder",
+    "repo": "https://github.com/geoffrey-doak-anchora/aemcoder"
+  },
+  "aemPreview": "https://main--aemcoder--geoffrey-doak-anchora.aem.page",
+  "aemLive": "https://main--aemcoder--geoffrey-doak-anchora.aem.live",
+  "notes": "Fresh EDS project with no fstab.yaml, no blocks, no boilerplate. Migration target is La Trobe University homepage."
+}

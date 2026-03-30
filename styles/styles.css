@@ -1,0 +1,470 @@
+/*
+ * La Trobe University - Edge Delivery Services
+ * Design system migrated from https://www.latrobe.edu.au/
+ */
+
+:root {
+  /* La Trobe brand colors */
+  --latrobe-red: #e2231b;
+  --latrobe-red-dark: #c01e18;
+  --latrobe-charcoal: #242424;
+  --latrobe-white: #ffffff;
+  --latrobe-light-grey: #f5f5f5;
+  --latrobe-mid-grey: #767676;
+  --latrobe-black: #000000;
+
+  /* Semantic color tokens */
+  --background-color: var(--latrobe-white);
+  --light-color: var(--latrobe-light-grey);
+  --dark-color: var(--latrobe-charcoal);
+  --text-color: var(--latrobe-charcoal);
+  --link-color: var(--latrobe-red);
+  --link-hover-color: var(--latrobe-red-dark);
+  --accent-color: var(--latrobe-red);
+
+  /* Fonts - Oswald replaces Knockout (licensed), DM Sans for body */
+  --heading-font-family: 'Oswald', oswald-fallback, sans-serif;
+  --body-font-family: 'DM Sans', dm-sans-fallback, sans-serif;
+
+  /* Body font sizes */
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+
+  /* Heading font sizes (mobile-first) */
+  --heading-font-size-xxl: 42px;
+  --heading-font-size-xl: 31.25px;
+  --heading-font-size-l: 25px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* Spacing */
+  --section-spacing: 62.5px;
+  --content-padding: 16px;
+
+  /* Nav */
+  --nav-height: 52px;
+
+  /* Transitions */
+  --transition-base: 0.2s ease;
+}
+
+/* Fallback fonts */
+@font-face {
+  font-family: oswald-fallback;
+  size-adjust: 88%;
+  src: local('Arial Narrow'), local('Helvetica Condensed'), local('Arial');
+}
+
+@font-face {
+  font-family: dm-sans-fallback;
+  size-adjust: 105%;
+  src: local('Arial');
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 48px;
+    --heading-font-size-xl: 31.25px;
+    --heading-font-size-l: 25px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+    --section-spacing: 62.5px;
+    --content-padding: 32px;
+  }
+}
+
+/* Base */
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  height: 169px;
+}
+
+@media (width < 900px) {
+  header {
+    height: auto;
+  }
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: 1.1;
+  scroll-margin: 40px;
+  text-transform: uppercase;
+}
+
+h1 { font-size: var(--heading-font-size-xxl); }
+h2 { font-size: var(--heading-font-size-xl); text-align: center; }
+h3 {
+  font-size: var(--heading-font-size-l);
+  color: var(--latrobe-red);
+  font-weight: 400;
+}
+h4 {
+  font-size: var(--heading-font-size-m);
+  text-transform: none;
+}
+h5 { font-size: var(--heading-font-size-s); }
+h6 { font-size: var(--heading-font-size-xs); }
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+code, pre {
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main > div {
+  margin: 40px 16px;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+/* Links */
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+  overflow-wrap: break-word;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Buttons */
+p.button-wrapper {
+  margin: 12px 0;
+}
+
+a.button:any-link,
+button.button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  border-color: var(--latrobe-red);
+  background-color: var(--latrobe-red);
+  color: var(--latrobe-white);
+}
+
+a.button[aria-disabled="true"],
+button.button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+a.button:any-link:hover,
+a.button:any-link:focus-visible,
+button.button:hover,
+button.button:focus-visible {
+  border-color: var(--latrobe-red-dark);
+  background-color: var(--latrobe-red-dark);
+  color: var(--latrobe-white);
+  text-decoration: none;
+}
+
+/* Primary button */
+a.button.primary,
+button.button.primary {
+  border-color: var(--latrobe-red);
+  background-color: var(--latrobe-red);
+  color: var(--latrobe-white);
+}
+
+a.button.primary:hover,
+a.button.primary:focus-visible,
+button.button.primary:hover,
+button.button.primary:focus-visible {
+  border-color: var(--latrobe-red-dark);
+  background-color: var(--latrobe-red-dark);
+  color: var(--latrobe-white);
+}
+
+a.button.primary[aria-disabled="true"],
+a.button.primary[aria-disabled="true"]:hover,
+a.button.primary[aria-disabled="true"]:focus-visible,
+button.button.primary:disabled,
+button.button.primary:disabled:hover,
+button.button.primary:disabled:focus-visible {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--latrobe-mid-grey);
+}
+
+/* Secondary button - outlined */
+a.button.secondary,
+button.button.secondary {
+  border-color: var(--latrobe-charcoal);
+  background-color: transparent;
+  color: var(--latrobe-charcoal);
+}
+
+a.button.secondary:hover,
+a.button.secondary:focus-visible,
+button.button.secondary:hover,
+button.button.secondary:focus-visible {
+  border-color: var(--latrobe-red);
+  background-color: var(--latrobe-red);
+  color: var(--latrobe-white);
+}
+
+a.button.secondary[aria-disabled="true"],
+a.button.secondary[aria-disabled="true"]:hover,
+a.button.secondary[aria-disabled="true"]:focus-visible,
+button.button.secondary:disabled,
+button.button.secondary:disabled:hover,
+button.button.secondary:disabled:focus-visible {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--latrobe-mid-grey);
+}
+
+/* Accent button - white on dark */
+a.button.accent,
+button.button.accent {
+  border-color: var(--latrobe-white);
+  background-color: var(--latrobe-white);
+  color: var(--latrobe-red);
+}
+
+a.button.accent:hover,
+a.button.accent:focus-visible,
+button.button.accent:hover,
+button.button.accent:focus-visible {
+  border-color: var(--latrobe-light-grey);
+  background-color: var(--latrobe-light-grey);
+  color: var(--latrobe-red-dark);
+}
+
+a.button.accent[aria-disabled="true"],
+a.button.accent[aria-disabled="true"]:hover,
+a.button.accent[aria-disabled="true"]:focus-visible,
+button.button.accent:disabled,
+button.button.accent:disabled:hover,
+button.button.accent:disabled:focus-visible {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--latrobe-mid-grey);
+}
+
+/* Browse by discipline label */
+main .section > .default-content-wrapper > h2 + p {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* Start Your Journey - link grid with arrows */
+main .section > .default-content-wrapper ul {
+  list-style: none;
+  padding: 0;
+}
+
+main .section > .default-content-wrapper ul li {
+  border-bottom: 2px solid var(--latrobe-charcoal);
+}
+
+main .section > .default-content-wrapper ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  color: var(--latrobe-charcoal);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+}
+
+main .section > .default-content-wrapper ul li a::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--latrobe-red);
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+main .section > .default-content-wrapper ul li a:hover {
+  color: var(--latrobe-red);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  main .section > .default-content-wrapper ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+}
+
+/* Images */
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Sections */
+main > .section {
+  margin: var(--section-spacing) 0;
+}
+
+main > .section > div {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 var(--content-padding);
+}
+
+main > .section:first-of-type {
+  margin-top: 0;
+}
+
+/* Hero section - full width, no constraints */
+main > .section:first-of-type > div {
+  max-width: none;
+  padding: 0;
+}
+
+@media (width >= 900px) {
+  main > .section > div {
+    padding: 0 var(--content-padding);
+  }
+}
+
+/* Section variants */
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: var(--section-spacing) 0;
+}
+
+main .section.grey {
+  background-color: #eee;
+  color: var(--latrobe-charcoal);
+  margin: 0;
+  padding: var(--section-spacing) 0;
+  text-align: center;
+}
+
+main .section.grey a:any-link {
+  color: var(--latrobe-red);
+  text-decoration: underline;
+}
+
+main .section.dark {
+  background-color: var(--latrobe-charcoal);
+  color: var(--latrobe-white);
+  margin: 0;
+  padding: var(--section-spacing) 0;
+  text-align: center;
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
+  color: var(--latrobe-white);
+}
+
+main .section.dark h3 {
+  color: var(--latrobe-red);
+}
+
+main .section.dark a:any-link {
+  color: var(--latrobe-white);
+}
+
+main .section.dark a:hover {
+  color: var(--latrobe-light-grey);
+}
+
+main .section.dark a.button:any-link,
+main .section.dark button.button {
+  border-color: var(--latrobe-white);
+  background-color: var(--latrobe-white);
+  color: var(--latrobe-red);
+}
+
+main .section.dark a.button:hover,
+main .section.dark button.button:hover {
+  border-color: var(--latrobe-light-grey);
+  background-color: var(--latrobe-light-grey);
+  color: var(--latrobe-red-dark);
+}

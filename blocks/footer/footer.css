@@ -1,0 +1,177 @@
+/* Footer - La Trobe dark footer */
+
+footer {
+  background-color: var(--latrobe-charcoal);
+  color: var(--latrobe-white);
+  font-size: var(--body-font-size-s);
+}
+
+/* The footer block creates: .footer > div (wrapper) > div.section (×3) */
+footer .footer > div {
+  margin: auto;
+  max-width: 1200px;
+  padding: 40px 24px 24px;
+}
+
+footer .footer p {
+  margin: 0 0 8px;
+}
+
+footer a:any-link {
+  color: var(--latrobe-white);
+}
+
+footer a:hover {
+  color: var(--latrobe-light-grey);
+  text-decoration: underline;
+}
+
+footer h2 {
+  color: var(--latrobe-white);
+  font-size: 18px;
+  font-family: var(--heading-font-family);
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-align: left;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+footer li {
+  padding: 3px 0;
+}
+
+footer img {
+  max-width: 120px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 16px;
+}
+
+/* Social icons - 3x3 grid */
+footer .icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+/* Section 1: Logo + Social + Donate (first .section child) */
+footer .footer > div > div:first-child p:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px;
+  justify-content: start;
+  max-width: 120px;
+  margin-bottom: 16px;
+}
+
+footer .footer > div > div:first-child p:nth-child(2) a {
+  display: inline-block;
+  margin-right: 0;
+}
+
+/* Donate today button - white pill on dark bg */
+footer .footer > div > div:first-child p:last-child a {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  padding: 13px 24px;
+  background-color: var(--latrobe-white);
+  color: var(--latrobe-charcoal);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+footer .footer > div > div:first-child p:last-child a:hover {
+  background-color: var(--latrobe-light-grey);
+  color: var(--latrobe-charcoal);
+  text-decoration: none;
+}
+
+footer .footer > div > div:first-child {
+  padding-bottom: 16px;
+}
+
+/* Section 2: Link columns - uses .footer-column wrappers created by JS */
+footer .footer > div > div:nth-child(2) .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (width >= 900px) {
+  footer .footer > div > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 250px;
+    float: left;
+    margin-right: 40px;
+  }
+
+  footer .footer > div > div:nth-child(2) .default-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Mobile: hide logo and social icons */
+@media (width < 900px) {
+  footer .footer > div > div:first-child p:first-child {
+    display: none;
+  }
+
+  footer .footer > div > div:first-child p:nth-child(2) {
+    display: none;
+  }
+
+  footer .footer-accordion-heading {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #444;
+  }
+
+  footer .footer-accordion-heading::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--latrobe-white);
+    font-family: var(--body-font-family);
+  }
+
+  footer .footer-accordion-heading[aria-expanded='true']::after {
+    content: '\2212';
+  }
+
+  footer .footer-accordion-heading[aria-expanded='false'] + ul {
+    display: none;
+  }
+
+  footer .footer-accordion-heading[aria-expanded='true'] + ul {
+    display: block;
+  }
+}
+
+/* Section 3: Legal links (last .section child) */
+footer .footer > div > div:last-child {
+  border-top: 1px solid #444;
+  padding-top: 16px;
+  font-size: 12px;
+}

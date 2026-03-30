@@ -1,0 +1,79 @@
+/* Cards Nav - Browse by discipline links
+ * Two-column list with red arrows (matching original La Trobe layout)
+ */
+
+.cards-nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (width >= 600px) {
+  .cards-nav > ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+}
+
+.cards-nav > ul > li {
+  border: none;
+  border-bottom: 2px solid var(--latrobe-charcoal);
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.cards-nav > ul > li:hover {
+  background-color: transparent;
+}
+
+.cards-nav > ul > li:hover a {
+  color: var(--latrobe-red);
+  text-decoration: none;
+}
+
+.cards-nav .cards-nav-card-body {
+  margin: 0;
+  padding: 0;
+}
+
+.cards-nav .cards-nav-card-body p {
+  margin: 0;
+}
+
+.cards-nav .cards-nav-card-body a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--latrobe-charcoal);
+  text-decoration: none;
+  white-space: normal;
+  font-family: var(--body-font-family);
+}
+
+.cards-nav .cards-nav-card-body a::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--latrobe-red);
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Last item "Need help deciding?" in red with underline */
+.cards-nav > ul > li:last-child .cards-nav-card-body a {
+  color: var(--latrobe-red);
+  text-decoration: underline;
+}
+
+.cards-nav .cards-nav-card-image {
+  display: none;
+}

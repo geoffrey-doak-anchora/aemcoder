@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-stats",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-29T23:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.latrobe.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "proof-points",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + paragraph + link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "statistics/proof-point sections",
+      "key facts with icons",
+      "feature highlights with small icons"
+    ],
+    "notSuitableFor": [
+      "image-heavy product cards",
+      "text-only link grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-29T23:35:00.000Z"
+  }
+}

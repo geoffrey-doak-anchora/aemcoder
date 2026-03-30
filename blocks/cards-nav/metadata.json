@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-nav",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-29T23:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.latrobe.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "navigation-links",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "link text only",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "discipline/category navigation grids",
+      "link collections without images",
+      "browse-by-topic sections"
+    ],
+    "notSuitableFor": [
+      "image-heavy card grids",
+      "product cards with descriptions"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-29T23:35:00.000Z"
+  }
+}

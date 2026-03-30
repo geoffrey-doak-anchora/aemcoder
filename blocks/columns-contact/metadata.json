@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-29T23:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.latrobe.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "contact-info",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "label + phone link per column",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "contact information sections",
+      "simple 3-column text layouts",
+      "phone/email directory sections"
+    ],
+    "notSuitableFor": [
+      "image-heavy layouts",
+      "complex multi-row content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-29T23:35:00.000Z"
+  }
+}
