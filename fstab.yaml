@@ -1,2 +1,2 @@
 mountpoints:
-  /: /content
+  /: https://github.com/geoffrey-doak-anchora/aemcoder/tree/main/content
